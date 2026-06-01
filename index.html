@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#060807">
+
+    <title>NuñezOS · Oscar Nuñez Vargas — Creador de Soluciones No-Code & AI</title>
+    <meta name="description"
+        content="NuñezOS — Portafolio profesional de Oscar Nuñez Vargas. Especialista en automatizaciones avanzadas, integración de Inteligencia Artificial y soluciones de negocio No-Code/Low-Code.">
+
+    <meta name="author" content="Oscar Nuñez Vargas">
+    <meta name="keywords"
+        content="automatizacion, AI, Low-Code, No-Code, Make, Zapier, n8n, Airtable, Inteligencia Artificial, Agentes de IA, Bases de Datos, Oscar Nuñez Vargas Vargas, Eficiencia Operativa">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph (Facebook / LinkedIn) -->
+    <meta property="og:title" content="NuñezOS · Oscar Nuñez Vargas — Creador de Soluciones No-Code & AI">
+    <meta property="og:description"
+        content="Especialista en automatizaciones avanzadas, integración de Inteligencia Artificial y soluciones de negocio No-Code/Low-Code.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="NuñezOS · Oscar Nuñez Vargas Vargas — Creador de Soluciones No-Code & AI">
+    <meta name="twitter:description"
+        content="Especialista en automatizaciones avanzadas, integración de Inteligencia Artificial y soluciones de negocio No-Code/Low-Code.">
+
+    <!-- Preconnect Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./static/images/logo.png">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="./static/css/neon.css">
+</head>
+
+<body class="os-mode">
+
+    <!-- ── SVG ICON SPRITE ────────────────────────────────────── -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-spark" viewBox="0 0 24 24">
+                <path d="M12 2v6m0 8v6M3 12h6m6 0h6M5.6 5.6l4.2 4.2m4.4 4.4l4.2 4.2M5.6 18.4l4.2-4.2m4.4-4.4l4.2-4.2"
+                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </symbol>
+            <symbol id="i-folder" viewBox="0 0 24 24">
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"
+                    stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" fill="none" />
+                <path d="M3 11h18" stroke="currentColor" stroke-width="1.8" />
+            </symbol>
+            <symbol id="i-book" viewBox="0 0 24 24">
+                <path d="M4 4a2 2 0 0 1 2-2h6v18H6a2 2 0 0 0-2 2V4z" stroke="currentColor" stroke-width="1.8"
+                    stroke-linejoin="round" fill="none" />
+                <path d="M20 4a2 2 0 0 0-2-2h-6v18h6a2 2 0 0 1 2 2V4z" stroke="currentColor" stroke-width="1.8"
+                    stroke-linejoin="round" fill="none" />
+            </symbol>
+            <symbol id="i-envelope" viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M3.5 7l8.5 6 8.5-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            </symbol>
+            <symbol id="i-chat" viewBox="0 0 24 24">
+                <path d="M21 12a8 8 0 1 1-3.3-6.5L21 4l-1 4.3A8 8 0 0 1 21 12z" stroke="currentColor" stroke-width="1.8"
+                    stroke-linejoin="round" fill="none" />
+                <circle cx="8" cy="12" r="1" fill="currentColor" />
+                <circle cx="12" cy="12" r="1" fill="currentColor" />
+                <circle cx="16" cy="12" r="1" fill="currentColor" />
+            </symbol>
+            <symbol id="i-terminal" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M7 10l3 2-3 2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                    stroke-linecap="round" />
+                <path d="M12 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </symbol>
+            <symbol id="i-stack" viewBox="0 0 24 24">
+                <path d="M3 7l9-4 9 4-9 4-9-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"
+                    fill="none" />
+                <path d="M3 12l9 4 9-4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                <path d="M3 17l9 4 9-4" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+            </symbol>
+            <symbol id="i-calendar" viewBox="0 0 24 24">
+                <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M3 10h18" stroke="currentColor" stroke-width="1.8" />
+                <path d="M8 3v4M16 3v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+            </symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <ellipse cx="12" cy="12" rx="4" ry="9" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M3 12h18" stroke="currentColor" stroke-width="1.8" />
+            </symbol>
+            <symbol id="i-user" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M4 21c0-4 4-7 8-7s8 3 8 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    fill="none" />
+            </symbol>
+            <symbol id="i-bot" viewBox="0 0 24 24">
+                <rect x="4" y="8" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M12 4v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <circle cx="12" cy="4" r="1" fill="currentColor" />
+                <circle cx="9" cy="13" r="1" fill="currentColor" />
+                <circle cx="15" cy="13" r="1" fill="currentColor" />
+            </symbol>
+            <symbol id="i-linkedin" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8" fill="none" />
+                <path d="M8 10v8M8 7v.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M12 18v-5a2.5 2.5 0 0 1 5 0v5M12 10v8" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" />
+            </symbol>
+            <symbol id="i-close" viewBox="0 0 24 24">
+                <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </symbol>
+        </defs>
+    </svg>
+
+    <!-- ── BOOT SCREEN ── -->
+    <div class="boot-screen" id="boot">
+        <button class="boot-skip" id="boot-skip" type="button" aria-label="Saltar arranque">[OMITIR →]</button>
+
+        <pre class="boot-logo" aria-hidden="true">
+   _   _                      ___  ____  
+  | \ | | _   _  _ __   ___  / _ \/ ___| 
+  |  \| || | | || '_ \ / _ \| | | \___ \ 
+  | |\  || |_| || | | ||  __/| |_| |___) |
+  |_| \_| \__,_||_| |_| \___| \___/|____/ 
+        </pre>
+
+        <h1 class="boot-title">Nunez<span class="boot-title__accent">OS</span></h1>
+        <p class="boot-meta">v1.0.0 · KERNEL LOW-CODE · CORE-AUTOMATION</p>
+
+        <div class="boot-progress" aria-hidden="true">
+            <div class="boot-progress__fill" id="boot-fill"></div>
+        </div>
+        <p class="boot-pct" id="boot-pct">0%</p>
+
+        <div class="boot-log" id="boot-log" aria-live="polite"></div>
+    </div>
+
+    <!-- ── DESKTOP SHELL ── -->
+    <div class="os-desktop" id="desktop" aria-hidden="true">
+
+        <!-- TOPBAR -->
+        <header class="os-topbar">
+            <div class="os-topbar__left">
+                <span class="avatar-wrap">
+                    <span class="avatar avatar--sm">
+                        <img src="./static/images/oscar.jpg" alt="Oscar Nuñez Vargas Vargas"
+                            style="width:100%; height:100%; object-fit:cover;">
+                    </span>
+                    <span class="avatar-wrap__dot avatar-wrap__dot--sm" aria-hidden="true"></span>
+                </span>
+                <a href="#" class="os-topbar__brand">NuñezOS</a>
+            </div>
+            <div class="os-topbar__right">
+                <span class="os-tray__seg os-tray__seg--hide-mobile">
+                    <span class="dot dot--live" aria-hidden="true"></span> ONLINE
+                </span>
+                <span class="os-tray__seg os-tray__seg--hide-mobile">AUTOMATION · DEVS</span>
+                <span class="os-tray__seg" id="os-clock">--:--</span>
+            </div>
+        </header>
+
+        <!-- MAIN WORKSPACE -->
+        <main class="os-workspace">
+
+            <!-- ── DESKTOP SHORTCUTS ── -->
+            <div class="desktop-shortcuts">
+                <button class="shortcut" id="shortcut-terminal" type="button" aria-label="Abrir Terminal.exe">
+                    <span class="shortcut__icon"><svg class="icon">
+                            <use href="#i-terminal" />
+                        </svg></span>
+                    <span class="shortcut__label">Terminal.exe</span>
+                </button>
+                <button class="shortcut" id="shortcut-cv" type="button" aria-label="Descargar CV.pdf">
+                    <span class="shortcut__icon"><svg class="icon">
+                            <use href="#i-book" />
+                        </svg></span>
+                    <span class="shortcut__label">CV_Oscar.pdf</span>
+                </button>
+                <button class="shortcut" id="shortcut-projects" type="button" aria-label="Ver Proyectos.lnk">
+                    <span class="shortcut__icon"><svg class="icon">
+                            <use href="#i-folder" />
+                        </svg></span>
+                    <span class="shortcut__label">Proyectos.lnk</span>
+                </button>
+            </div>
+
+            <!-- ── WELCOME HERO ── -->
+            <section class="welcome-hero" id="home">
+                <div class="welcome-hero__top">
+                    <span class="avatar-wrap">
+                        <span class="avatar avatar--lg">
+                            <img src="./static/images/oscar.jpg" alt="Oscar Nuñez Vargas"
+                                style="width:100%; height:100%; object-fit:cover;">
+                        </span>
+                        <span class="avatar-wrap__dot" aria-hidden="true"></span>
+                    </span>
+                    <div class="welcome-hero__id">
+                        <span class="welcome-hero__greet">¡Hola! Soy Oscar Nuñez Vargas</span>
+                        <span class="welcome-hero__id__role">No-Code & AI Solutions Creator</span>
+                    </div>
+                </div>
+
+                <h1 class="welcome-hero__title">
+                    Automatizo procesos con <br>
+                    <span class="accent">IA y Low-Code</span>
+                </h1>
+
+                <p class="welcome-hero__lead">
+                    Diseño y construyo <strong>soluciones a medida</strong> que transforman tareas repetitivas y flujos
+                    complejos en sistemas eficientes y autónomos. Utilizo herramientas avanzadas no-code y agentes
+                    inteligentes para acelerar operaciones, eliminar errores manuales y potenciar el rendimiento de
+                    negocio.
+                </p>
+
+                <div class="welcome-hero__cta">
+                    <a href="mailto:onunez9418@gmail.com" class="cta cta--with-icon">
+                        <svg class="icon">
+                            <use href="#i-envelope" />
+                        </svg>
+                        Escríbeme por Correo
+                    </a>
+                    <button class="cta-ghost cta-ghost--with-icon" id="open-term">
+                        <svg class="icon">
+                            <use href="#i-terminal" />
+                        </svg>
+                        Modo Terminal
+                    </button>
+                </div>
+            </section>
+
+            <!-- ── STATS STRIP ── -->
+            <div class="stats-strip" aria-label="Métricas de Impacto">
+                <div class="stat-card">
+                    <span class="stat-card__value">4+</span>
+                    <span class="stat-card__label">Años de Exp.</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card__value">50+</span>
+                    <span class="stat-card__label">Flujos Creados</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card__value stat-card__value--accent">1000+</span>
+                    <span class="stat-card__label">Horas Ahorradas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-card__value">15+</span>
+                    <span class="stat-card__label">Sistemas Integrados</span>
+                </div>
+            </div>
+
+            <!-- ── CAPABILITIES (Pilares de Trabajo) ── -->
+            <section class="os-section" id="capabilities">
+                <header class="os-section__head">
+                    <span class="eyebrow eyebrow--block">Capacidades</span>
+                    <span class="mono muted t-xs">4 áreas clave</span>
+                </header>
+
+                <div class="os-cards os-cards--2">
+
+                    <article class="cap-card">
+                        <span class="cap-card__icon"><svg class="icon">
+                                <use href="#i-stack" />
+                            </svg></span>
+                        <h3 class="cap-card__title">Automatización avanzada No-Code</h3>
+                        <p class="cap-card__desc">
+                            Orquestación de procesos de negocio complejos integrando múltiples plataformas de software.
+                            Reducción drástica del trabajo manual y aumento de precisión de datos.
+                        </p>
+                        <ul class="list-clean">
+                            <li>Make · Zapier · n8n</li>
+                            <li>Webhooks · Rest APIs</li>
+                            <li>Flujos de Aprobación Automatizados</li>
+                        </ul>
+                    </article>
+
+                    <article class="cap-card">
+                        <span class="cap-card__icon"><svg class="icon">
+                                <use href="#i-bot" />
+                            </svg></span>
+                        <h3 class="cap-card__title">Inteligencia Artificial y Agentes</h3>
+                        <p class="cap-card__desc">
+                            Implementación de modelos avanzados de lenguaje e ingeniería de prompts para crear
+                            asistentes capaces de analizar información interna y agilizar operaciones diarias.
+                        </p>
+                        <ul class="list-clean">
+                            <li>Modelos OpenAI · Claude Anthropic</li>
+                            <li>Agentes Conversacionales</li>
+                            <li>RAG (Bases de Conocimiento)</li>
+                        </ul>
+                    </article>
+
+                    <article class="cap-card">
+                        <span class="cap-card__icon"><svg class="icon">
+                                <use href="#i-folder" />
+                            </svg></span>
+                        <h3 class="cap-card__title">Aplicaciones y Portales Low-Code</h3>
+                        <p class="cap-card__desc">
+                            Desarrollo rápido de interfaces operativas, bases de datos y portales web internos para
+                            mejorar la coordinación de equipos sin los largos plazos del desarrollo tradicional.
+                        </p>
+                        <ul class="list-clean">
+                            <li>Bases de datos Airtable</li>
+                            <li>Google AppSheet · Glide</li>
+                            <li>Paneles de control a medida</li>
+                        </ul>
+                    </article>
+
+                    <article class="cap-card">
+                        <span class="cap-card__icon"><svg class="icon">
+                                <use href="#i-user" />
+                            </svg></span>
+                        <h3 class="cap-card__title">Consultoría y Optimización</h3>
+                        <p class="cap-card__desc">
+                            Mapeo y rediseño de procesos ineficientes. Acompañamiento a equipos de negocio para
+                            digitalizar flujos y seleccionar el stack tecnológico más eficiente.
+                        </p>
+                        <ul class="list-clean">
+                            <li>Reingeniería de procesos</li>
+                            <li>Diseño de Bases de Datos SQL/NoSQL</li>
+                            <li>Análisis coste-eficiencia de herramientas</li>
+                        </ul>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ── CASE STUDIES (Proyectos Reales) ── -->
+            <section class="os-section" id="cases">
+                <header class="os-section__head">
+                    <span class="eyebrow eyebrow--block">Casos de Estudio</span>
+                    <span class="mono muted t-xs">04 Soluciones Empresariales</span>
+                </header>
+
+                <div class="os-cards">
+
+                    <article class="case-card">
+                        <div class="case-card__head">
+                            <span class="pill pill--primary">Gestión de Campo · FSM</span>
+                            <span class="case-card__arrow">●</span>
+                        </div>
+                        <h3 class="case-card__title">Gestor de Servicios de Campo e Incidencias</h3>
+                        <p class="case-card__desc">
+                            Sistema corporativo para la asignación y liquidación ágil de servicios técnicos en campo.
+                            Permite notificar en tiempo real a los técnicos asignados, registrar reportes de visita
+                            directo de móviles y automatizar el cierre administrativo del ticket.
+                        </p>
+                        <div class="tag-row">
+                            <span class="pill">Gestión de Tickets</span>
+                            <span class="pill">Low-Code / No-Code</span>
+                            <span class="pill">Mobile Sync</span>
+                            <span class="pill">Automatización</span>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-card__head">
+                            <span class="pill pill--primary">Finanzas · Conciliaciones</span>
+                            <span class="case-card__arrow">●</span>
+                        </div>
+                        <h3 class="case-card__title">Plataforma de Conciliación y Liquidaciones</h3>
+                        <p class="case-card__desc">
+                            Aplicación interna enfocada en agilizar el procesamiento, validación y liquidación
+                            automática de transacciones comerciales, notas de crédito y devoluciones de clientes.
+                            Minimiza errores de captura y acelera la conciliación operativa con distribuidores y cadenas
+                            de retail.
+                        </p>
+                        <div class="tag-row">
+                            <span class="pill">Procesamiento Financiero</span>
+                            <span class="pill">Make / Zapier</span>
+                            <span class="pill">Reglas de Negocio</span>
+                            <span class="pill">Hojas de Cálculo</span>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-card__head">
+                            <span class="pill pill--primary">IA · Productividad</span>
+                            <span class="case-card__arrow">●</span>
+                        </div>
+                        <h3 class="case-card__title">Asistente Digital Corporativo con Inteligencia Artificial</h3>
+                        <p class="case-card__desc">
+                            Agente de IA interactivo conectado a la base de conocimiento y los inventarios internos de
+                            la empresa. Los colaboradores pueden realizar consultas complejas en lenguaje natural sobre
+                            stock de productos, fichas técnicas y normativas internas, obteniendo respuestas inmediatas.
+                        </p>
+                        <div class="tag-row">
+                            <span class="pill">OpenAI API</span>
+                            <span class="pill">AI Agents</span>
+                            <span class="pill">Bases de Datos</span>
+                            <span class="pill">RAG Integrado</span>
+                        </div>
+                    </article>
+
+                    <article class="case-card">
+                        <div class="case-card__head">
+                            <span class="pill pill--primary">Operaciones · Analytics</span>
+                            <span class="case-card__arrow">●</span>
+                        </div>
+                        <h3 class="case-card__title">Tablero de Control Operativo y KPIs en Tiempo Real</h3>
+                        <p class="case-card__desc">
+                            Panel unificado de control para la dirección operativa y de desarrollo de productos.
+                            Centraliza bases de datos dispersas de logística, solicitudes internas y tareas operativas
+                            para brindar métricas consolidadas del desempeño en paneles intuitivos.
+                        </p>
+                        <div class="tag-row">
+                            <span class="pill">Airtable</span>
+                            <span class="pill">KPI Dashboards</span>
+                            <span class="pill">Gestión I+D</span>
+                            <span class="pill">Visualización</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ── ETHOS / FILOSOFÍA ── -->
+            <section class="os-section" id="ethos">
+                <header class="os-section__head">
+                    <span class="eyebrow eyebrow--block">Filosofía</span>
+                </header>
+                <article class="ethos-card">
+                    <p class="ethos-card__quote">
+                        La mejor automatización es la que simplifica lo complejo.<br>
+                        <span class="accent">La tecnología es el medio, el valor está en la eficiencia.</span>
+                    </p>
+                    <span class="ethos-card__author">Oscar Nuñez Vargas Vargas · NuñezOS</span>
+                </article>
+            </section>
+
+            <!-- ── CONTACTO / INITIATE ── -->
+            <section class="os-section" id="initiate">
+                <header class="os-section__head">
+                    <span class="eyebrow eyebrow--block">Contacto</span>
+                    <span class="mono muted t-xs">Siguiente paso</span>
+                </header>
+                <article class="initiate-card">
+                    <h2 class="initiate-card__title">
+                        ¿Listo para optimizar<br>
+                        <span class="accent">tus operaciones?</span>
+                    </h2>
+                    <p class="initiate-card__lead">
+                        Hablemos sobre cómo podemos automatizar tus tareas repetitivas, conectar tus sistemas mediante
+                        flujos inteligentes o integrar Inteligencia Artificial en tus procesos diarios de trabajo.
+                    </p>
+                    <div class="initiate-card__actions">
+                        <a href="mailto:onunez9418@gmail.com" class="cta cta--with-icon">
+                            <svg class="icon">
+                                <use href="#i-envelope" />
+                            </svg>
+                            onunez9418@gmail.com →
+                        </a>
+                        <a href="tel:960560064" class="cta-ghost cta-ghost--with-icon">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            960560064
+                        </a>
+                        <a href="https://www.linkedin.com/in/oscar-nu%C3%B1ez-636729208" target="_blank" rel="noopener"
+                            class="cta-ghost cta-ghost--with-icon">
+                            <svg class="icon">
+                                <use href="#i-linkedin" />
+                            </svg>
+                            LinkedIn
+                        </a>
+                    </div>
+                    <div class="initiate-card__meta">
+                        <span><span class="initiate-card__meta__key">RESPUESTA</span> &lt; 24h · LUNES-VIERNES</span>
+                        <span><span class="initiate-card__meta__key">UBICACIÓN</span> LIMA · PERÚ</span>
+                        <span><span class="initiate-card__meta__key">IDIOMAS</span> ESPAÑOL · INGLÉS</span>
+                    </div>
+                </article>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <div class="site-footer__top">
+                <a href="#" class="site-footer__brand">NUÑEZ//AUTOMATIONS</a>
+                <span class="site-footer__status">
+                    <span class="dot dot--live" aria-hidden="true"></span> STATUS · ONLINE
+                </span>
+            </div>
+            <p class="site-footer__bio">
+                <strong>Oscar Nuñez Vargas Vargas</strong> · Creador de Soluciones No-Code & AI · Integración de
+                Sistemas · Make · Zapier · n8n · Airtable · Lima, Perú
+            </p>
+
+            <div class="site-footer__grid">
+                <div class="site-footer__col">
+                    <h4>NAVEGACIÓN</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#capabilities">Capacidades</a></li>
+                        <li><a href="#cases">Casos de Estudio</a></li>
+                        <li><a href="#initiate">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__col">
+                    <h4>STACK CLAVE</h4>
+                    <ul>
+                        <li><a><svg class="site-footer__col__icon">
+                                    <use href="#i-spark" />
+                                </svg> Make (Integromat)</a></li>
+                        <li><a><svg class="site-footer__col__icon">
+                                    <use href="#i-bot" />
+                                </svg> OpenAI & Claude</a></li>
+                        <li><a><svg class="site-footer__col__icon">
+                                    <use href="#i-folder" />
+                                </svg> Airtable DB</a></li>
+                        <li><a><svg class="site-footer__col__icon">
+                                    <use href="#i-terminal" />
+                                </svg> Zapier / n8n</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer__col">
+                    <h4>REDES</h4>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/oscar-nu%C3%B1ez-636729208" target="_blank"
+                                rel="noopener"><svg class="site-footer__col__icon">
+                                    <use href="#i-linkedin" />
+                                </svg> LinkedIn</a></li>
+                        <li><a href="https://github.com" target="_blank" rel="noopener"><svg
+                                    class="site-footer__col__icon">
+                                    <use href="#i-stack" />
+                                </svg> GitHub</a></li>
+                        <li><a href="mailto:onunez9418@gmail.com"><svg class="site-footer__col__icon">
+                                    <use href="#i-envelope" />
+                                </svg> Email</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__meta">
+                <span>© <span id="copyright-year">2026</span> · OSCAR NUÑEZ VARGAS · <span
+                        class="accent">v1.0</span></span>
+                <button type="button" class="site-footer__col" id="open-term-footer"
+                    style="background:none; border:0; padding:0; color: var(--text-muted); cursor:pointer; font-family:inherit; font-size:inherit; display:inline-flex; align-items:center; gap:6px;">
+                    <svg class="site-footer__col__icon" style="width:14px; height:14px;">
+                        <use href="#i-terminal" />
+                    </svg> MODO TERMINAL
+                </button>
+            </div>
+
+            <p class="site-footer__note">
+                NuñezOS · Portafolio diseñado como sistema operativo · construido con código nativo ligero
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ── TERMINAL MODAL ── -->
+    <div class="terminal-modal" id="term-modal" role="dialog" aria-label="Terminal del Sistema" aria-modal="true">
+        <div class="terminal-modal__window">
+            <header class="terminal-modal__chrome">
+                <span class="terminal-modal__chrome__left">Terminal · oscar@nunez-os:~</span>
+                <button class="terminal-modal__close" id="term-close" type="button" aria-label="Cerrar terminal">
+                    <svg class="icon" style="width:14px; height:14px;">
+                        <use href="#i-close" />
+                    </svg>
+                </button>
+            </header>
+            <div class="terminal-modal__body">
+                <div class="term">
+                    <div class="term__output" id="term-out" role="log" aria-live="polite">
+                        <div class="motd">
+                            <strong>NuñezOS · v1.0.0</strong> — Creador de Soluciones No-Code & AI<br>
+                            Escribe: <strong>help</strong> · <strong>whoami</strong> · <strong>skills</strong> ·
+                            <strong>proyectos</strong> · <strong>contacto</strong>
+                        </div>
+                    </div>
+                    <!-- Auto-suggestions bar -->
+                    <div class="term__suggestions" id="term-sug" aria-label="Sugerencias de comandos">
+                        <span class="term__suggestions-title">Sugerencias:</span>
+                        <button type="button" class="term__suggestion-btn" data-cmd="help">help</button>
+                        <button type="button" class="term__suggestion-btn" data-cmd="whoami">whoami</button>
+                        <button type="button" class="term__suggestion-btn" data-cmd="skills">skills</button>
+                        <button type="button" class="term__suggestion-btn" data-cmd="proyectos">proyectos</button>
+                        <button type="button" class="term__suggestion-btn" data-cmd="cv">cv</button>
+                        <button type="button" class="term__suggestion-btn" data-cmd="contacto">contacto</button>
+                    </div>
+                    <form class="term__input-line" id="term-form" autocomplete="off">
+                        <span class="term__prompt" aria-hidden="true">oscar@nunez-os:~$</span>
+                        <input class="term__input" id="term-input" type="text" spellcheck="false" autocapitalize="off"
+                            autocorrect="off" placeholder="escribe 'help' o 'whoami'...">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="./static/js/main.js" defer></script>
+</body>
+
+</html>
